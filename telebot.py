@@ -68,9 +68,7 @@ def on_start(message):
         bot.reply_to(message, text_messages['wrong_chat'])
         return
 
-def listener(messages):
-    for m in messages:
-        print str(m)
+
 
 bot.set_update_listener(listener)
 bot.polling()
