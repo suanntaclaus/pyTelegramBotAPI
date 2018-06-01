@@ -69,8 +69,8 @@ def on_start(message):
         return
 
 def listener(messages):
-    for m in messages:
-        print str(m)
+    for m in messages  
+    print str(m)
 
 bot.set_update_listener(listener)
 bot.polling()
