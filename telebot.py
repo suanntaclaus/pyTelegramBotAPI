@@ -36,4 +36,3 @@ def main():
 
 if __name__ == '__main__':  
     main()
-Although we have added a "timeout" of 1
