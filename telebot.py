@@ -17,7 +17,7 @@ def convert_uppercase(bot, update):
   update.message.reply_text(update.message.text.upper())
 
 def response(message):
-     response1 = ["{}, the number is 7"]
+     response1 = "{}, the number is 7"
      name = unicodedata.normalize('NFKD', message.from_user.first_name).encode('ascii','ignore')
      response2 = response1.format(name)
      return response2
