@@ -16,6 +16,18 @@ def start(bot, update):
 def convert_uppercase(bot, update):
   update.message.reply_text(update.message.text.upper())
 
+def response(message):
+     response1 = ["{}, the number is 7"]
+     name = unicodedata.normalize('NFKD', message.from_user.first_name).encode('ascii','ignore')
+     response2 = response1.format(name)
+     return response2
+
+def ra_reply(message):
+    # If the message contains the word 'pole' (case insensitive), the bot replies
+    if 'hello' in message.text():
+        response3 = response(message)
+        bot.reply_to(message, response1)
+
 def main():
   # Create Updater object and attach dispatcher to it
   updater = Updater("616484809:AAFyFLE0JHrxHOEsHXaa-gvGXYk7Tg19HxQ")
