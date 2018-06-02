@@ -26,9 +26,9 @@ def ra_reply(bot, update):
     # If the message contains the word 'pole' (case insensitive), the bot replies
     if 'hello' in message.text.lower():
         response3 = response(message)
-        update.message.reply_text(message, response3)
+        update.message.reply_text(response3)
     else:
-        update.message.reply_text(message, "BYE")
+        update.message.reply_text("BYE")
 
 def main():
   # Create Updater object and attach dispatcher to it
