@@ -1,5 +1,5 @@
 import telebot
-from __init__.py import TeleBot
+from __init__ import TeleBot
 
 API_TOKEN = '<616484809:AAFyFLE0JHrxHOEsHXaa-gvGXYk7Tg19HxQ>'
 
