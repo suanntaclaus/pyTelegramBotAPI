@@ -43,8 +43,8 @@ def main():
   upper_case = MessageHandler(Filters.text, convert_uppercase)
   response_handler = MessageHandler(Filters.text, ra_reply)
   dispatcher.add_handler(start_handler)
-  dispatcher.add_handler(upper_case)
   dispatcher.add_handler(response_handler)
+  dispatcher.add_handler(upper_case)
 
   # Start the bot
   updater.start_polling()
