@@ -29,8 +29,8 @@ def ra_reply(bot, update):
     if 'hello' in message.text.lower():
         response3 = response(message)
         update.message.reply_text(response3)
-    #else:
-        #update.message.reply_text("BYE")
+    else:
+        update.message.reply_text("BYE")
 
 def main():
   # Create Updater object and attach dispatcher to it
@@ -40,11 +40,11 @@ def main():
 
   # Add command handler to dispatcher
   start_handler = CommandHandler('start',start)
-  upper_case = MessageHandler(Filters.text, convert_uppercase)
+  #upper_case = MessageHandler(Filters.text, convert_uppercase)
   response_handler = MessageHandler(Filters.text, ra_reply)
   dispatcher.add_handler(start_handler)
   dispatcher.add_handler(response_handler)
-  dispatcher.add_handler(upper_case)
+  #dispatcher.add_handler(upper_case)
 
   # Start the bot
   updater.start_polling()
