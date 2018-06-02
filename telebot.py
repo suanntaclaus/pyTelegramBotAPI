@@ -40,10 +40,10 @@ def main():
 
   # Add command handler to dispatcher
   start_handler = CommandHandler('start',start)
-  #upper_case = MessageHandler(Filters.text, convert_uppercase)
+  upper_case = MessageHandler(Filters.text, convert_uppercase)
   response_handler = MessageHandler(Filters.text, ra_reply)
   dispatcher.add_handler(start_handler)
-  #dispatcher.add_handler(upper_case)
+  dispatcher.add_handler(upper_case)
   dispatcher.add_handler(response_handler)
 
   # Start the bot
