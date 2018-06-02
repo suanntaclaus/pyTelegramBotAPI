@@ -29,8 +29,8 @@ def ra_reply(bot, update):
     if 'hello' in message.text.lower():
         response3 = response(message)
         update.message.reply_text(response3)
-    else:
-        update.message.reply_text("BYE")
+    #else:
+        #update.message.reply_text("BYE")
 
 def main():
   # Create Updater object and attach dispatcher to it
