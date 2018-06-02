@@ -16,6 +16,10 @@ def start(bot, update):
 def convert_uppercase(bot, update):
   update.message.reply_text(update.message.text.upper())
 
+def start_callback(bot, update, args):
+    user_says = "hello".join(args)
+    update.message.reply_text("You said: " + user_says)
+
 def main():
   # Create Updater object and attach dispatcher to it
   updater = Updater("616484809:AAFyFLE0JHrxHOEsHXaa-gvGXYk7Tg19HxQ")
@@ -27,6 +31,7 @@ def main():
   upper_case = MessageHandler(Filters.text, convert_uppercase)
   dispatcher.add_handler(start_handler)
   dispatcher.add_handler(upper_case)
+  dispatcher.add_handler(CommandHandler(start_callback, pass_args=True))
 
   # Start the bot
   updater.start_polling()
