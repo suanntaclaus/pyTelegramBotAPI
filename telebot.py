@@ -22,13 +22,13 @@ def response(message):
      response2 = response1.format(name)
      return response2
 
-def ra_reply(message):
+def ra_reply(bot, update):
     # If the message contains the word 'pole' (case insensitive), the bot replies
     if 'hello' in message.text.lower():
         response3 = response(message)
-        bot.reply_to(message, response3)
+        update.message.reply_text(message, response3)
     else:
-        bot.reply_to(message, "BYE")
+        update.message.reply_text(message, "BYE")
 
 def main():
   # Create Updater object and attach dispatcher to it
