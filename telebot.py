@@ -24,7 +24,7 @@ def response(message):
 
 def ra_reply(message):
     # If the message contains the word 'pole' (case insensitive), the bot replies
-    if 'hello' in message.text():
+    if 'hello' in message.text.lower():
         response3 = response(message)
         bot.reply_to(message, response1)
 
@@ -37,8 +37,10 @@ def main():
   # Add command handler to dispatcher
   start_handler = CommandHandler('start',start)
   upper_case = MessageHandler(Filters.text, convert_uppercase)
+  response_handler = MessageHandler(Filters.text, ra_reply)
   dispatcher.add_handler(start_handler)
   dispatcher.add_handler(upper_case)
+  dispatcher.add_handler(response_handler)
 
   # Start the bot
   updater.start_polling()
