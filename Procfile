@@ -1,1 +1,1 @@
-bot: python telebot.py -p $PORT
+web: python telebot.py -p $PORT
