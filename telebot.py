@@ -6,6 +6,22 @@
 #{"ok":true,"result":[{"update_id":959942309,
 #"message":{"message_id":15,"from":{"id":236704084,"is_bot":false,"first_name":"Su-ann","username":"suanntaclaus","language_code":"en-GB"},"chat":{"id":236704084,"first_name":"Su-ann","username":"suanntaclaus","type":"private"},"date":1527910904,"text":"/start","entities":[{"offset":0,"length":6,"type":"bot_command"}]}},{"update_id":959942310,
 #"message":{"message_id":16,"from":{"id":236704084,"is_bot":false,"first_name":"Su-ann","username":"suanntaclaus","language_code":"en-GB"},"chat":{"id":236704084,"first_name":"Su-ann","username":"suanntaclaus","type":"private"},"date":1527910905,"text":"hello"}}]}
+from telegram.ext import Updater
+updater = Updater(token='616484809:AAFyFLE0JHrxHOEsHXaa-gvGXYk7Tg19HxQ')
+dispatcher = updater.dispatcher
+import logging
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                     level=logging.INFO)
+def start(bot, update):
+     bot.send_message(chat_id=update.message.chat_id, text="I'm a bot, please talk to me!")
+from telegram.ext import CommandHandler
+start_handler = CommandHandler('start', start)
+dispatcher.add_handler(start_handler)
+
+
+
+
+
 import urllib
 import json 
 import requests
@@ -49,12 +65,12 @@ def get_last_chat_id_and_text(updates):
 def echo_all(updates):
     for update in updates["result"]:
         try:
-            text = update["message"]["text"]
+            text = update["message"]["message"]
             chat = update["message"]["chat"]["id"]
             send_message(text, chat)
         except Exception as e:
             print(e)
-            
+
 def send_message(text, chat_id):
     text = urllib.parse.quote_plus(text)
     url = URL + "sendMessage?text={}&chat_id={}".format(text, chat_id)
