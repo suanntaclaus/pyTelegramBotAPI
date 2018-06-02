@@ -8,7 +8,7 @@
 #"message":{"message_id":16,"from":{"id":236704084,"is_bot":false,"first_name":"Su-ann","username":"suanntaclaus","language_code":"en-GB"},"chat":{"id":236704084,"first_name":"Su-ann","username":"suanntaclaus","type":"private"},"date":1527910905,"text":"hello"}}]}
 # - *- coding: utf- 8 - *-
 # - *- coding: utf- 8 - *-
-from python-telegram-bot.telegram.ext import Updater, CommandHandler, MessageHandler, Filters
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 
 def start(bot, update):
   update.message.reply_text("I'm a bot, Nice to meet you!")
