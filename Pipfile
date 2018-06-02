@@ -9,7 +9,7 @@ chardet = "==3.0.4"
 idna = "==2.6"
 requests = "==2.18.4"
 "urllib3" = "==1.22"
-"33f740b" = {path = "./python-telegram-bot"}
+python-telegram-bot = "*"
 
 [dev-packages]
 
